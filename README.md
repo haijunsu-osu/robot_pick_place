@@ -36,61 +36,42 @@ Download the Feetech FD.1.9.8.3 bus servo debug software to test and debug servo
 - [FD.1.9.8.3.zip](./project_files/FD1.9.8.3.zip)
 - Official page: http://www.feetechrc.com/software.html
 
-## Sample Python Code
-### 1. Block Detection with USB Camera
+## Project Tasks
 
-```python
-cap = cv2.VideoCapture(0)
+### Task 1: Pick and Place Wooden Blocks
+**Goal:**
+- Pick and place a variety of objects from one position to another
+- Pick and place as many objects as possible in a given time window (about 90-120 seconds)
+- The robot should be pre-programmed to conduct all tasks. Once it is set, no one can touch the robot or the object.
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        break
-    # Convert to HSV for color detection
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    # Define color range for wooden block (adjust as needed)
-    lower = (10, 50, 50)
-    upper = (30, 255, 255)
-    mask = cv2.inRange(hsv, lower, upper)
-    # Find contours
-    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    for cnt in contours:
-        area = cv2.contourArea(cnt)
-        if area > 500:
-            x, y, w, h = cv2.boundingRect(cnt)
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
-            cv2.putText(frame, 'Block', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0,255,0), 2)
-    cv2.imshow('Block Detection', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-cap.release()
-cv2.destroyAllWindows()
-```
+**Scoring:**
+- A pick/place task is successful if the object is placed in the designated container box.
+- Each successful pick/place task is counted 10 points
+- The total score is calculated as the total number of tasks times 10 points
 
-### 2. Control LeRobot SO-101 Arm (Sample Serial Command)
-```python
-import serial
-import time
+### Task 2: Pick a Marker Pen and Trace a Curve
+**Goal:**
+- (20 points) Robot grasps a marker pen (see dimensions from the previous slide) from a pen holder
+- (40 points) Robot moves the pen tip to trace a curve (e.g. circle) on a field paper (letter size; exact dimensions will be given)
+- (20 points) Robot places the marker back into the pen holder
 
-# Connect to robot arm (adjust COM port as needed)
-ser = serial.Serial('COM3', 115200, timeout=1)
+**Total time:** 120 secs
+**Maximum points:** 80
 
-def move_motor(motor_id, position):
-    # Example command format for Feetech STS 3215 motor
-    # Replace with actual protocol for SO-101
-    cmd = bytearray([0xFF, 0xFF, motor_id, 0x05, 0x03, 0x1E, position & 0xFF, (position >> 8) & 0xFF])
-    ser.write(cmd)
-    time.sleep(0.1)
+### Task 3: Random Placed Objects (Computer Vision)
+**Goal:**
+- Robot detects the position of a wooden block that is randomly placed on the field
+- Robot grasps the detected block and places it into a designated area.
 
-# Move motor 1 to position 512 (middle)
-move_motor(1, 512)
-ser.close()
-```
+**Total time:** 120 secs
+**Maximum points:** 80
+- Field setup: same as in Task 1 and 2.
 
 ## Deliverables
 - Working Python scripts for block detection and robot arm control
 - Documentation of setup and results
-- Demonstration video
+- Demonstration videos
+- A written paper describing the analysis, simulation and task accomplishment
 
 ## Notes
 - Adjust color detection parameters for your block and lighting.
