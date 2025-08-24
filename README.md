@@ -17,9 +17,18 @@ This project challenges senior Mechanical Engineering students to design and imp
 5. **Software Setup**: Install Python, OpenCV, and required libraries for camera and robot control.
 
 ## Materials Required
+### LeRobot SO-ARM 101 Follower Arm
+- 6 DOF: 5 for the arm, 1 for the gripper. Six motors: STS3215 12V, 1/345 gearing
+- Price: $190, Ships from the US.
+- Order: [SO-ARM101 Follower Only](https://partabot.com/products/so-arm101-follower-only?variant=43200383549555)
+- Bill of Materials, CAD models: [SO-ARM100 GitHub](https://github.com/TheRobotStudio/SO-ARM100?tab=readme-ov-file)
+- Assembly videos and documents: [LeRobot SO101 Docs](https://huggingface.co/docs/lerobot/so101)
+- ROS simulation: [SO101 ROS Workspace](https://github.com/Pavankv92/lerobot_ws/tree/main)
 
-
-
+### USB Camera
+- 2MP USB Camera Module for SO-ARM100/101, 30fps, 3m cable
+- Price: $28
+- Order: [Wowrobo USB Camera](https://shop.wowrobo.com/products/2mp-usb-camera-module-for-so-arm100-101-30fps-3m-cable?utm_source=chatgpt.com)
 
 ## Sample Python Code
 The SO-101 is a 6-DOF educational robot arm designed for automation and robotics research. It features Feetech STS 3215 bus servos for precise control and supports serial communication for easy integration with Python.
