@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3: Computer Vision for Pick and Place</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+        .section { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <h1>Task 3: Computer Vision for Pick and Place</h1>
+    <div class="section">
+        <h2>Goal</h2>
+        <p>
+            Develop a computer vision system that detects the pose of a wooden box and controls a robot arm (SO-101) to pick and place it.
+        </p>
+    </div>
+    <div class="section">
+        <h2>Vision Setup</h2>
+        <ul>
+            <li>Wrist-mounted USB camera</li>
+            <li>ChAruCo board for camera calibration and pose estimation</li>
+            <li>Small ArUco marker attached to the wooden block for detection</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Motion Planning</h2>
+        <ul>
+            <li>Use ROS 2 and Moveit for robot arm motion planning and control</li>
+            <li>Integrate vision data to guide the SO-101 arm for pick and place operations</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://docs.ros.org/en/foxy/index.html" target="_blank">ROS 2 Documentation</a></li>
+            <li><a href="https://moveit.ros.org/" target="_blank">Moveit Motion Planning Framework</a></li>
+            <li><a href="https://docs.opencv.org/master/df/d4a/tutorial_charuco_detection.html" target="_blank">OpenCV ChAruCo Board Tutorial</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Sample Python Scripts</h2>
+        <ul>
+            <li><a href="charuco_board_create.py" target="_blank">Create ChAruCo Board</a></li>
+            <li><a href="vision_pick_place.py" target="_blank">Real-Time Object Detection and Motion Planning</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Install ROS 2 Humble, MoveIt, and Universal Robots on Windows (WSL)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        .section { margin-bottom: 2em; }
+        .command { background:#f4f4f4; border-radius:6px; padding:0.7em 1em; margin:0.5em 0; font-family:'Fira Mono','Consolas',monospace; font-size:1em; }
+        a { color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Step-by-Step: Install ROS 2 Humble, MoveIt, and Universal Robots on Windows (WSL)</h1>
+    <div class="section">
+        <h2>1. Install WSL and Ubuntu 22.04</h2>
+        <ul>
+            <li>Enable Windows Subsystem for Linux (WSL) and install Ubuntu 22.04 from the Microsoft Store.</li>
+            <li class="command">wsl --install -d Ubuntu-22.04</li>
+            <li>Restart your computer if prompted. Open Ubuntu from the Start menu.</li>
+            <li>Test WSL installation:</li>
+            <li class="command">lsb_release -a</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>2. Install ROS 2 Humble</h2>
+        <ul>
+            <li>Follow the official ROS 2 Humble installation guide for Ubuntu 22.04: <a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html" target="_blank">ROS 2 Humble Install</a></li>
+            <li>Major steps:</li>
+            <li class="command">sudo apt update</li>
+            <li class="command">sudo apt install ros-humble-desktop</li>
+            <li>Test ROS 2 installation:</li>
+            <li class="command">ros2 run demo_nodes_cpp talker</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>3. Install MoveIt for ROS 2 Humble</h2>
+        <ul>
+            <li>Install MoveIt using apt:</li>
+            <li class="command">sudo apt install ros-humble-moveit</li>
+            <li>Test MoveIt installation (launch RViz demo):</li>
+            <li class="command">ros2 launch moveit2_tutorials demo.launch.py</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>4. Install Universal Robots ROS2 Driver</h2>
+        <ul>
+            <li>Install the Universal Robots package:</li>
+            <li class="command">sudo apt install ros-humble-ur</li>
+            <li>Test UR package installation (list UR launch files):</li>
+            <li class="command">ros2 pkg list | grep ur</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>5. Run UR5e Step Demo in RViz2</h2>
+        <ul>
+            <li>Download the demo script <b>ur5e_step_20deg.py</b> from the course repository:</li>
+            <li><a href="../ur5e_step_20deg.py" target="_blank">ur5e_step_20deg.py</a></li>
+            <li>Make sure ROS 2 and MoveIt are sourced:</li>
+            <li class="command">source /opt/ros/humble/setup.bash</li>
+            <li>Run the script to move the UR5e robot in RViz2 (each joint moves 20 degrees):</li>
+            <li class="command">python3 ur5e_step_20deg.py</li>
+        </ul>
+    </div>
+</body>
+</html>
+                    <li>Follow the instructions for environment setup and verification</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="section">
+        <h2>References</h2>
+        <ol>
+            <li>Install Ubuntu 22.04 on WSL2: <a href="https://documentation.ubuntu.com/wsl/latest/howto/install-ubuntu-wsl2/" target="_blank">https://documentation.ubuntu.com/wsl/latest/howto/install-ubuntu-wsl2/</a></li>
+            <li>ROS2 Humble installation: <a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html#install-ros-2-packages" target="_blank">https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html#install-ros-2-packages</a></li>
+            <li>MoveIt for ROS2 Humble and Ubuntu 22.04 installation: <a href="https://moveit.ai/install-moveit2/binary/" target="_blank">https://moveit.ai/install-moveit2/binary/</a></li>
+            <li>Universal Robots ROS2 Humble Driver: <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/humble" target="_blank">https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/humble</a></li>
+        </ol>
+    </div>
+</body>
+</html>

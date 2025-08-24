@@ -9,7 +9,7 @@ def move_motor(motor_id, position):
     """
     # Example command format (adjust for your motor's protocol)
     cmd = bytearray([0xFF, 0xFF, motor_id, 0x05, 0x03, 0x1E, position & 0xFF, (position >> 8) & 0xFF])
-    with serial.Serial('COM3', 115200, timeout=1) as ser:
+    with serial.Serial('COM3', 1000000, timeout=1) as ser:
         ser.write(cmd)
         time.sleep(0.1)
 
