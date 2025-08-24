@@ -40,45 +40,20 @@
     <img src="images/waveshare_bus_adapter.png" alt="Waveshare Bus Servo Adapter">
     <img src="images/bus_servo_wire_diagram.jpg" alt="Bus Servo Adapter Wiring Diagram">
     <h3>Sample Python Script</h3>
-    <pre>
-import serial
-import time
-
-# Example PID parameters
-Kp = 1.2
-Ki = 0.01
-Kd = 0.05
-
-# Target position
-setpoint = 600
-integral = 0
-last_error = 0
-
-ser = serial.Serial('COM3', 115200, timeout=1)
-
-def move_motor(motor_id, position):
-    cmd = bytearray([0xFF, 0xFF, motor_id, 0x05, 0x03, 0x1E, position & 0xFF, (position >> 8) & 0xFF])
-    ser.write(cmd)
-    time.sleep(0.1)
-
-for i in range(100):
-    # Read current position from motor (replace with actual read command)
-    current_position = 500  # Example value
-    error = setpoint - current_position
-    integral += error
-    derivative = error - last_error
-    output = Kp * error + Ki * integral + Kd * derivative
-    position = int(current_position + output)
-    move_motor(1, max(0, min(1023, position)))
-    last_error = error
-    time.sleep(0.05)
-
-ser.close()
-    </pre>
-    <h2>3. PID Parameter Tuning</h2>
     <p>
-        You can experiment with PID parameters using the following web tool:
+        Download and review the sample Python script for PID control of the Feetech STS 3215 servo motor:
+        <a href="web_pid_demo/pid_servo_control.py" target="_blank">pid_servo_control.py</a>
     </p>
-    <a class="button" href="web_pid_demo/pid_tuner.html" target="_blank">PID Tuner Web Page</a>
+        <h2>3. How to Tune the PID Controller for Positional Control</h2>
+        <ol>
+            <li>Start with all gains at zero.</li>
+            <li>Increase <strong>Kp</strong> until the servo moves quickly to the target but may oscillate.</li>
+            <li>Add <strong>Kd</strong> to reduce overshoot and dampen oscillations.</li>
+            <li>Increase <strong>Ki</strong> to eliminate steady-state error, but too much can cause instability.</li>
+            <li>Test different values and observe the response.</li>
+        </ol>
+        <p>
+            Try the <a href="web_pid_demo/pid_tuner.html" target="_blank">PID Tuner Web Page</a> to experiment with parameters and see simulated results.
+        </p>
 </body>
 </html>
