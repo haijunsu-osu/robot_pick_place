@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PID Control Demo - Servo Motor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f4f4; }
+        .container { background: #fff; padding: 24px; border-radius: 8px; max-width: 900px; margin: auto; box-shadow: 0 2px 8px #0001; }
+        h1 { text-align: center; }
+        .controls, .plot-panel { display: flex; gap: 32px; margin-top: 24px; }
+        .controls { flex-direction: column; max-width: 300px; }
+        .panel { background: #f9f9f9; padding: 16px; border-radius: 8px; }
+        label { display: block; margin-bottom: 8px; }
+        input[type=range] { width: 100%; }
+        .param-value { font-weight: bold; margin-left: 8px; }
+        #plot { background: #fff; border: 1px solid #ccc; border-radius: 8px; }
+        .desc { margin-top: 24px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PID Control Demo: Electric Servo Motor</h1>
+        <div class="desc">
+            <p>This interactive demo explains the concept of <b>PID (Proportional-Integral-Derivative) control</b> using an electric servo motor as an example. Adjust the PID parameters and observe how the motor's position responds to a step change in the target angle.</p>
+        </div>
+        <div style="display: flex; gap: 32px;">
+            <div class="controls panel">
+                <label>P (Proportional): <span id="p-val" class="param-value">1.0</span></label>
+                <input type="range" id="p-slider" min="0" max="10" step="0.1" value="1.0">
+                <label>I (Integral): <span id="i-val" class="param-value">0.0</span></label>
+                <input type="range" id="i-slider" min="0" max="2" step="0.01" value="0.0">
+                <label>D (Derivative): <span id="d-val" class="param-value">0.0</span></label>
+                <input type="range" id="d-slider" min="0" max="2" step="0.01" value="0.0">
+                <label>Target Angle (deg): <span id="target-val" class="param-value">90</span></label>
+                <input type="range" id="target-slider" min="0" max="180" step="1" value="90">
+                <button id="reset-btn">Reset</button>
+                <hr>
+                <button id="connect-btn">Connect to Arduino</button>
+                <div id="serial-status" style="margin-top:8px; color:#007700; font-size:0.95em;"></div>
+                <button id="send-pid-btn" style="margin-top:8px;">Send PID & Target</button>
+                <button id="clear-real-btn" style="margin-top:8px;">Clear Real Data</button>
+            </div>
+            <div class="plot-panel panel" style="flex:1; flex-direction:column; align-items:center;">
+                <canvas id="plot" width="500" height="300"></canvas>
+                <div style="margin-top:8px; font-size:0.95em; color:#555;">Blue: Simulated | Green: Real Motor | Red: Target</div>
+            </div>
+        </div>
+        <div class="desc">
+            <h3>How PID Control Works</h3>
+            <ul>
+                <li><b>Proportional (P):</b> Reacts to the current error (difference between target and actual position).</li>
+                <li><b>Integral (I):</b> Reacts to the accumulation of past errors (helps eliminate steady-state error).</li>
+                <li><b>Derivative (D):</b> Reacts to the rate of change of the error (helps dampen oscillations).</li>
+            </ul>
+            <p>Try changing the P, I, and D values to see how the servo motor's response changes!</p>
+        </div>
+    </div>
+    <script src="pid_demo.js"></script>
+</body>
+</html>
