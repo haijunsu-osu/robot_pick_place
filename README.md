@@ -50,7 +50,7 @@ This project consists of three main tasks:
 	- Detect and pick a randomly placed block using computer vision, and place it in a designated area.
 
 
-For full details and scoring, see: [Project Tasks Details](./project_tasks.html)
+For full details and scoring, see: [Project Tasks Details](https://haijunsu-osu.github.io/robot_pick_place/project_tasks.html)
 
 ### Reference
 Project demonstration videos by (ME 5751 Spring 2022): [YouTube Playlist](https://youtube.com/playlist?list=PLjiZ26l9QIkyiXn23hBsi-Rf1M4ZiOSlU&si=nGxQqdxfMZ-IuwAd)
