@@ -38,34 +38,18 @@ Download the Feetech FD.1.9.8.3 bus servo debug software to test and debug servo
 
 ## Project Tasks
 
-### Task 1: Pick and Place Wooden Blocks
-**Goal:**
-- Pick and place a variety of objects from one position to another
-- Pick and place as many objects as possible in a given time window (about 90-120 seconds)
-- The robot should be pre-programmed to conduct all tasks. Once it is set, no one can touch the robot or the object.
+## Project Tasks Summary
 
-**Scoring:**
-- A pick/place task is successful if the object is placed in the designated container box.
-- Each successful pick/place task is counted 10 points
-- The total score is calculated as the total number of tasks times 10 points
+This project consists of three main tasks:
 
-### Task 2: Pick a Marker Pen and Trace a Curve
-**Goal:**
-- (20 points) Robot grasps a marker pen (see dimensions from the previous slide) from a pen holder
-- (40 points) Robot moves the pen tip to trace a curve (e.g. circle) on a field paper (letter size; exact dimensions will be given)
-- (20 points) Robot places the marker back into the pen holder
+1. **Pick and Place Wooden Blocks:**
+	- Pick and place objects from one position to another, maximizing the number of successful moves in a set time.
+2. **Pick a Marker Pen and Trace a Curve:**
+	- Grasp a marker, trace a curve on paper, and return the marker to its holder.
+3. **Random Placed Objects (Computer Vision):**
+	- Detect and pick a randomly placed block using computer vision, and place it in a designated area.
 
-**Total time:** 120 secs
-**Maximum points:** 80
-
-### Task 3: Random Placed Objects (Computer Vision)
-**Goal:**
-- Robot detects the position of a wooden block that is randomly placed on the field
-- Robot grasps the detected block and places it into a designated area.
-
-**Total time:** 120 secs
-**Maximum points:** 80
-- Field setup: same as in Task 1 and 2.
+For full details and scoring, see: [Project Tasks Details](./project_tasks.html)
 
 ## Deliverables
 - Working Python scripts for block detection and robot arm control
