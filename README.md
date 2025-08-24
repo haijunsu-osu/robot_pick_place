@@ -18,6 +18,7 @@ This project challenges senior Mechanical Engineering students to design and imp
 
 ## Materials Required
 ### LeRobot SO-ARM 101 Follower Arm
+The SO-101 is a 6-DOF educational robot arm designed for automation and robotics research. It features Feetech STS 3215 bus servos for precise control and supports serial communication for easy integration with Python.
 - 6 DOF: 5 for the arm, 1 for the gripper. Six motors: STS3215 12V, 1/345 gearing
 - Price: $190, Ships from the US.
 - Order: [SO-ARM101 Follower Only](https://partabot.com/products/so-arm101-follower-only?variant=43200383549555)
@@ -30,21 +31,13 @@ This project challenges senior Mechanical Engineering students to design and imp
 - Price: $28
 - Order: [Wowrobo USB Camera](https://shop.wowrobo.com/products/2mp-usb-camera-module-for-so-arm100-101-30fps-3m-cable?utm_source=chatgpt.com)
 
-## Sample Python Code
-The SO-101 is a 6-DOF educational robot arm designed for automation and robotics research. It features Feetech STS 3215 bus servos for precise control and supports serial communication for easy integration with Python.
-- Product page: https://www.lerobot.com/products/so-101-robot-arm
-- Typical specs: 6-axis, payload up to 500g, USB/serial interface
-- Order: https://www.lerobot.com/products/so-101-robot-arm
-
-
-Recommended: Logitech C270 or similar USB webcam. Provides 720p video for object detection tasks.
-- Product page: https://www.logitech.com/en-us/products/webcams/c270-hd-webcam.960-001063.html
-- Order: https://www.amazon.com/Logitech-C270-Webcam/dp/B004YW7WCY/
-
-### 1. Block Detection with USB Camera
+### Feetech bus servo debug software
 Download the Feetech FD.1.9.8.3 bus servo debug software to test and debug servo motors:
 - [FD.1.9.8.3.zip](./project_files/FD1.9.8.3.zip)
 - Official page: http://www.feetechrc.com/software.html
+
+## Sample Python Code
+### 1. Block Detection with USB Camera
 
 ```python
 cap = cv2.VideoCapture(0)
