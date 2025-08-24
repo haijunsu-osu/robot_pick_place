@@ -1,4 +1,4 @@
-# Robotics Course Project: Automated Block Sorting with LeRobot SO-101 Arm
+# ME 5751 Robotics Course Project, Department of Mechanical & Aerospace Engineering, The Ohio State University
 
 ## Project Overview
 This project challenges senior Mechanical Engineering students to design and implement an automated block sorting system using the LeRobot SO-101 robotic arm. The system will use a USB camera to detect the position of a wooden block on a table, then control the robot arm to pick up the block and place it in a designated area.
