@@ -32,11 +32,6 @@ The SO-101 is a 6-DOF educational robot arm designed for automation and robotics
 - Price: $28
 - Order: [Wowrobo USB Camera](https://shop.wowrobo.com/products/2mp-usb-camera-module-for-so-arm100-101-30fps-3m-cable?utm_source=chatgpt.com)
 
-### Feetech bus servo debug software
-Download the Feetech FD.1.9.8.3 bus servo debug software to test and debug servo motors:
-- [FD.1.9.8.3.zip](./project_files/FD1.9.8.3.zip)
-- Official page: http://www.feetechrc.com/software.html
-
 ## Project Tasks
 
 ## Project Tasks Summary
@@ -55,6 +50,9 @@ For full details and scoring, see: [Project Tasks Details](https://haijunsu-osu.
 
 ### Reference
 Project demonstration videos by (ME 5751 Spring 2022): [YouTube Playlist](https://youtube.com/playlist?list=PLjiZ26l9QIkyiXn23hBsi-Rf1M4ZiOSlU&si=nGxQqdxfMZ-IuwAd)
+
+## Web-based PID Control Tutorial
+For an interactive tutorial on PID control for the Feetech STS 3215 servo motors used in the SO-101 arm, visit: [PID Control Introduction](https://htmlpreview.github.io/?https://github.com/haijunsu-osu/robot_pick_place/blob/main/web_pid_demo/pid_control_intro.html)
 
 ## Deliverables
 - Working Python scripts for block detection and robot arm control
