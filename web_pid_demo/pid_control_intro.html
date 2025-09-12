@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PID Control of Motors</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        h3 { color: #2980b9; }
+        img { margin: 1em 0; max-width: 400px; display: block; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        a.button { display: inline-block; padding: 0.5em 1em; background: #2980b9; color: #fff; border-radius: 5px; text-decoration: none; margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <h1>PID Control of Motors</h1>
+    <h2>1. Introduction to PID Control Theory</h2>
+    <p>
+        PID (Proportional-Integral-Derivative) control is a feedback control technique widely used in industrial and robotics applications. The PID controller calculates an error value as the difference between a desired setpoint and a measured process variable, then applies correction based on proportional, integral, and derivative terms:
+    </p>
+    <pre>
+        u(t) = Kp * e(t) + Ki * ∫e(t)dt + Kd * de(t)/dt
+    </pre>
+    <ul>
+        <li><strong>Kp</strong>: Proportional gain (reacts to current error)</li>
+        <li><strong>Ki</strong>: Integral gain (reacts to accumulated error)</li>
+        <li><strong>Kd</strong>: Derivative gain (reacts to rate of error change)</li>
+    </ul>
+    <h2>2. Practice: Applying PID Control to a Feetech STS 3215 Servo Motor</h2>
+    <p>
+        The Feetech STS 3215 is a bus servo motor commonly used in robotics. To control it with PID, you need:
+    </p>
+    <ul>
+        <li>Feetech STS 3215 servo motor</li>
+        <li>Waveshare bus servo adapter</li>
+        <li>Microcontroller or PC with serial interface</li>
+    </ul>
+    <h3>Motor and Wiring Diagram</h3>
+    <img src="../images/feetech_sts3215_bus_servo.png" alt="Feetech STS 3215 Servo Motor">
+    <img src="../images/waveshare_bus_adapter.png" alt="Waveshare Bus Servo Adapter">
+    <img src="../images/bus_servo_wire_diagram.jpg" alt="Bus Servo Adapter Wiring Diagram">
+    <h3>Sample Python Script</h3>
+    <p>
+        Download and review the sample Python script for motion control of the Feetech STS 3215 servo motor:
+        <a href="servo_control.py" target="_blank">servo_control.py</a>
+
+    </p>
+    <p>
+        Alternatively, download and review the sample Python script using the st3215 library (<a href="https://github.com/Mickael-Roger/python-st3215" target="_blank">GitHub</a>):
+        <a href="st3215_control.py" target="_blank">st3215_control.py</a>
+    </p>
+        <h2>3. How to Tune the PID Controller for Positional Control</h2>
+        <p>
+            Change PID parameters using Feetech Servo Debug software. See the demo in the following.
+        </p>
+        <img src="servo_PID_tuning.gif" alt="PID Tuning Demo">
+</body>
+</html>
