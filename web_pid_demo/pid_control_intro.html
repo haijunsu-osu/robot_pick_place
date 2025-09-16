@@ -14,6 +14,17 @@
 </head>
 <body>
     <h1>Lab: Motion and PID Control of Servo Motors</h1>
+    <h2>Lab Instructions</h2>
+    <ol>
+        <li>Hardware setup: see the instruction below. Connect waveshare bus servo adapter to USB port of PC.</li>
+        <li>Download Feetech FD.1.9.8.3 bus servo debug software and test the motor.</li>
+        <li>Try to change PID parameters to observe how the motor moves.</li>
+        <li>Download and install vs code and setup python environment</li>
+        <li>Run the sample python code.</li>
+        <li>Modify the code so that you can control the motor for a specific angle, say +-90 degrees.</li>
+        <li>Set the motor at the middle position, target_position = 2098.</li>
+        <li>Use Feetech debug software to check the result.</li>
+    </ol>
     <h2>1. Introduction to PID Control Theory</h2>
     <p>
         PID (Proportional-Integral-Derivative) control is a feedback control technique widely used in industrial and robotics applications. The PID controller calculates an error value as the difference between a desired setpoint and a measured process variable, then applies correction based on proportional, integral, and derivative terms:
